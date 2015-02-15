@@ -1,18 +1,16 @@
 card_number = "4929735477250543"
 
-#take card_number and split up each digit
-#double every other digit > 5
-#subtract 9
-
+#instantiating variables
 all_digits = []
-#this loop will run through the characters, convert to int and put in alldigits array
+sum = 0
+valid = false
 
+#instantiating all_digits array
 card_number.each_char do |num|
   all_digits << num.to_i
 end
 
-#ultimately a loop should go here and will do the following arithmetic
-#something to the effect of
+#running arithmetic
 x=1
 while x < all_digits.size do
   if all_digits[x] > 4
@@ -21,17 +19,11 @@ while x < all_digits.size do
   x = x + 2
 end
 
-#checking the output to see if the algorithm is doing what it's doing
-sum = 0
-
-#takes the sum of all the digits in the all_digits array
+#summing digits
 all_digits.each do |a|
   sum = sum + a
 end
 
-
-#instantiating valid variable
-valid = false
 
 #validity check on sum.
 if sum % 10 == 0
